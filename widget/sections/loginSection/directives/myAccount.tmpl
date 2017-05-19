@@ -1,0 +1,18 @@
+<div ng-controller="myAccountCtrl" class="container-main-width innerPage page-myAccount">
+	
+	<div class="h21semiBold cartHeading t-center">Profile</div>
+	<div class="borderRoundedBox">
+		<div class="h16-7F7E7A"><strong>Name:</strong> {{user.firstName}} {{user.lastName}}</div>
+		<div class="h16-7F7E7A"><strong>Username:</strong> {{user.username}}</div>
+		<div class="h16-7F7E7A"><strong>Email:</strong> {{user.email}}</div>
+		<br>
+		
+		<div class="myAccountLinks">
+			<a href="" class="orangeLink" ng-click="editProfile()"><span>Edit Profile</span></a>
+			
+			<a href="" class="orangeLink" ng-click="changeEmail()" ng-hide="user.socialLogin"><span>Change Email</span></a>
+			
+			<a href="" class="orangeLink" ng-click="changePassword()" ng-hide="user.socialLogin"><span>Change Password</span></a>
+		</div>
+	</div>
+</div>

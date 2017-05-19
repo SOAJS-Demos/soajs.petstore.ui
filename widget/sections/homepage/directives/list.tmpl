@@ -1,0 +1,34 @@
+<div id="page-home">
+	{{pets}}
+	<div class="container-main-width homepage">
+		<div ng-controller="homepageCtrl" class="container-main-width" id="">
+			<div class="entryBoxes entryBoxesGrid">
+				<div ng-repeat="(_id, pet) in pets | filter: searchKeyword track by _id" class="col-lg-3 col-md-4 col-md-6 col-sm-6 col-sm-12" ng-show="pet.pet.quantity > 0" >
+                    <div class="box-wrapper">
+                        <div class="head" style="margin-left: 5px; color: #464543; font-family: 'Times New Roman';">
+                            <h4><b>{{pet.pet.name}} ({{pet.pet.price}})</b></h4>
+                        </div>
+                        <div>
+                            <div class="c-both" style="height: 100px;">
+                                <img ng-src="{{pet.pet.photoUrls}}" alt="Pet Image" width="120px" height="110px" title="Pet Image" class="f-left" hspace="5px"/>
+                                <div class="col-lg-offset-7">
+                                    <b>Breed</b>: {{pet.pet.breed}}<br>
+                                    <b>Gender</b>: {{pet.pet.gender}}<br>
+                                    <b>Color</b>: {{pet.pet.color}}<br>
+                                    <b>Age</b>: {{pet.pet.age}}<br>
+                                    <b>In Stock</b>: {{pet.pet.quantity}}
+                                </div>
+                            </div>
+                            <em style="padding-left: 5px; font-size: 14px">{{pet.pet.description}}<br></em>
+                            <div style="position: relative; padding-left: 10%; padding-top: 3px; padding-bottom: 3px; font-size: 14px">
+                                <b>Quantity: </b><input type="number" id="quantity{{_id}}" min="1" style="width: 50px; height: 25px; border-radius: 4px; border: 1px solid black">&nbsp;&nbsp;
+                                <input type="submit" value="Add to cart" ng-click="addToCart(pet, _id)" class="btn btn-primary" style="margin-bottom: 4px; padding: 3px 12px">
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+</div>

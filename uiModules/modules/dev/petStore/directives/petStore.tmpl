@@ -1,0 +1,31 @@
+<section ng-controller="storeCtrl">
+	<a href="" ng-click="addPet()" class="btn btn-sm btn-primary" style="margin-left: 10px; margin-top: 7px">Add New Pet</a><br/><br/>
+	<div class="entryBoxes entryBoxesGrid">
+		<div ng-repeat="(_id, pet) in pets track by _id" class="dbBox" style="width: 24%; min-height: 255px;">
+			<div class="head">
+				<h4>{{pet.pet.name}} ({{pet.pet.price}})</h4>
+				<span class="rightActions">
+	                <a href="" ng-click="editPet(pet);">
+	                    <span class="icon icon-pencil" tooltip="Edit Pet"></span>
+	                </a>
+	                <a href="" ng-confirm-click="Are you sure you want to delete this pet?" ng-click="removePet(pet);">
+	                    <span class="icon icon-cross" tooltip="Remove Pet"></span>
+	                </a>
+	            </span>
+			</div>
+			<div class="info2">
+				<div class="c-both table" style="height: 100px">
+					<img ng-src="{{pet.pet.photoUrls}}" alt="Pet Image" width="120px" height="110px" title="Pet Image" class="f-left" hspace="5" vspace="5"/>
+					<div class="col-lg-offset-7" style="margin-top: 10px; font-size: 13px">
+						<b>Breed</b>: {{pet.pet.breed}}<br>
+						<b>Gender</b>: {{pet.pet.gender}}<br>
+						<b>Color</b>: {{pet.pet.color}}<br>
+						<b>Age</b>: {{pet.pet.age}}<br>
+						<b>Quantity</b>: {{pet.pet.quantity}}
+					</div>
+				</div>
+				<em style="margin-top: 0%; position: relative">{{pet.pet.description}}<br></em>
+			</div>
+		</div>
+	</div>
+</section>

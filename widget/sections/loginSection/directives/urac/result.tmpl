@@ -1,0 +1,19 @@
+<div ng-controller="customLoginCntrl" class="container-main-width innerPage uracPath">
+
+	<div class="account-env login-env borderRoundedBox">
+		<div ng-hide="successLogin">
+			Loading...
+		</div>
+		<div ng-show="successLogin">
+			<div class="h21semiBold">Success</div>
+			<br>
+			<b>
+				Thank you for logging in using <span style="text-decoration: underline">{{strategy}}</span>.
+				You will be redirected automatically back to the main interface.
+				<div style="display: none;">Click here if you do no get redirected in the next 30 seconds.</div>
+			</b>
+		</div>
+	</div>
+	<br/>
+
+</div>

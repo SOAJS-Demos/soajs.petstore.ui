@@ -1,0 +1,71 @@
+<div id="topMenu-section1" class="topbar-wrapper">
+    <div class="topbar ng-scope">
+        <!--Navigation list-->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+
+
+                <div class="branding">
+                    <a ng-click="menuVisible = false" href="/">
+                        <img class="logo"  src="/themes/theme1/images/logo.png" alt=""/><span class="">Pet Store</span></a>
+                    <a  class="searchBox">
+                        <input class="" ng-model="searchKeyword">
+                    </a>
+
+                </div>
+
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="menu collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="topnav nav navbar-nav navbar-right" ng-class="{'menu-open': menuVisible === true}" click-outside="" is-open="menuVisible">
+
+                      <!--  this will allow you to add drop down
+                        <li class="dropdown" ng-click="menuVisible = false">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">drop down
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li ng-repeat="oneLink in mainMenu" class="t-left f-left">
+                                    <a href="{{oneLink.url}}" id="{{oneLink.id}}">
+                                        <img ng-if="oneLink.icon" ng-show="(count === 0) || count === undefined || currentLocation === '/login'" src="/themes/theme1/images/emptyCart.png" alt="">
+                                        <img ng-if="oneLink.icon" ng-show="(count > 0) && (currentLocation != '/login')" src="/themes/theme1/images/cart+.png" alt="">
+                                        {{oneLink.title}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        -->
+
+                        <li ng-repeat="oneLink in mainMenu" class="t-left f-left">
+                            <a href="{{oneLink.url}}" id="{{oneLink.id}}">
+                                <img ng-if="oneLink.icon" ng-show="(count === 0) || count === undefined || currentLocation === '/login'" src="/themes/theme1/images/emptyCart.png" alt="">
+                                <img ng-if="oneLink.icon" ng-show="(count > 0) && (currentLocation != '/login')" src="/themes/theme1/images/cart+.png" alt="">
+                                {{oneLink.title}}
+                            </a>
+                        </li>
+                        <li ng-repeat="oneLink in userMenu" class="t-left f-left">
+                            <a href="{{oneLink.url}}" id="{{oneLink.id}}">
+                                <img ng-if="oneLink.icon" src="/themes/theme1/images/emptyCart.png" alt="">&nbsp;{{oneLink.title}}
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                    </button>
+
+                </div>
+
+            </div><!-- /.container-fluid -->
+        </nav>
+
+    </div>
+</div>
+
+

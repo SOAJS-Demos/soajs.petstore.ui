@@ -1,0 +1,1265 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #e1eaee;
+
+    min-height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:focus {
+    outline: 0;
+}
+
+em {
+    color: #999;
+}
+
+.container-main-width {
+    width: 100%;
+    /*margin: 0 auto;*/
+}
+
+.innerPage {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    /*border-bottom: 1px solid #F6F5F0;*/
+}
+
+.rightTopLinks {
+    color: white;
+    float: right;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.cart {
+    color: white;
+    margin-right: 10px;
+}
+
+.cart img {
+    width: 55px;
+    height: 55px;
+}
+
+.leftTopLogo {
+    color: white;
+    width: 100%;
+    /*text-align: center;*/
+    /*float: left;*/
+    /*width: 1100px;*/
+    /*margin-left: 10px;*/
+    font-size: 20px;
+}
+
+.cart-icon {
+    position: relative;
+    width: 175px;
+}
+
+.rightTopLinks img {
+    height: 21px;
+}
+
+#userMenu {
+    width: 140px;
+    padding-top: 9px;
+    color: white;
+    float: right;
+    position: relative;
+}
+
+#topBar #userMenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#topBar #userMenu a {
+    outline: 0;
+}
+
+#topBar #userMenu a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+#userMenu .myAccountMenu {
+    width: 133px;
+    height: 99px;
+    position: absolute;
+    top: 47px;
+    background-color: #EDECE6;
+    z-index: 9999;
+}
+
+#userMenu .myAccountMenu ul {
+    list-style-type: none;
+}
+
+#userMenu .myAccountMenu ul li {
+    border-bottom: 1px solid #E6E6E3;
+    color: #464543;
+    height: 33px;
+    padding-top: 8px;
+    padding-left: 15px;
+}
+
+#topBar #userMenu .myAccountMenu li a:hover {
+    text-decoration: none;
+    color: #464543;
+}
+
+#userMenu .myAccountMenu ul li.lastItem {
+    border-bottom: none;
+}
+
+#userMenu .myAccount img {
+    height: 20px;
+    margin-right: 8px;
+}
+
+#userMenu span.myAccount a {
+    padding-bottom: 28px;
+}
+
+#page {
+    margin: 0 auto;
+    clear: both;
+    position: relative;
+    z-index: 10;
+}
+
+.homeFooter {
+    /*background: url("../images/footerArt.png") no-repeat bottom center;*/
+    /*background-size: 100% auto;*/
+}
+
+.wrapper .contentPage {
+
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+}
+
+.overlay .bg {
+    background-color: #464543;
+    color: #464543;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay .content {
+    background: white;
+    margin: auto;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+    width: 30%;
+    left: 35%;
+    top: 10%;
+}
+
+#overlay .content .image {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.modal-backdrop.in {
+    height: 100%;
+}
+
+#notificationMessages .content {
+    top: 100px;
+    left: 40%;
+    background: rgb(255, 255, 255);
+    box-shadow: "0px 0px 20px 0px rgba(0,0,0,0.20)";
+    border-radius: 10px;
+    width: 20%;
+    height: 141px;
+    opacity: 1;
+    padding-top: 20px;
+}
+
+#notificationMessages .content .customMessage {
+    height: 80px;
+    border-bottom: 1px solid #7F7E7A;
+    font-size: 16px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#notificationMessages .buttons {
+    width: 100%;
+    padding-top: 6px;
+    text-align: center;
+}
+
+#notificationMessages .buttons a {
+    font-size: 17px;
+    color: #007AFF;
+    text-align: center;
+}
+
+.alertButton {
+    text-align: center;
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+}
+
+form .note {
+    display: none;
+}
+
+form .submittedForm .note {
+    display: block;
+}
+
+#notifications {
+    clear: both;
+    background: white;
+    padding: 5px;
+    border: solid 1px #cccccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.alert {
+    margin: 0px;
+}
+
+#page section {
+    display: inline-block;
+    width: 100%;
+    background: #ffffff;
+    border: solid 1px #cccccc;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 300px;
+}
+
+#page section aside {
+    float: left;
+    min-height: 450px;
+    display: inline-block;
+}
+
+div.entryBoxes {
+    width: 100%;
+    display: table;
+    padding-left: 15px;
+}
+
+span.entryBoxes {
+    width: 200px;
+    padding-left: 200px;
+    margin-top: -50px;
+}
+
+.dbBox {
+    padding-top: 3px;
+    float: left;
+    display: table;
+    margin-bottom: 3px;
+    min-height: 243px;
+}
+
+#page div.entryBoxes div.entryBox, .entryOneBox {
+    position: relative;
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#page div.entryBoxesGrid div.entryBox {
+    float: left;
+    display: table;
+    width: auto;
+    padding-left: 5px;
+}
+
+#page div.entryBoxes div.entryBox label {
+    text-decoration: underline;
+}
+
+.greyBox {
+    background: #cccccc;
+}
+
+#page div.entryBoxes div.blueBox {
+    /*#page div.entryBoxes div.entryBox:hover {*/
+    background: #DEF1F7;
+    border: solid 1px #337ab7;
+    color: black;
+}
+
+#page div.entryBoxes div.redBox {
+    background: #f2dede;
+    border: solid 1px #d43f3a;
+    color: black;
+}
+
+div.entryBox .header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: solid 1px #cccccc;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #eeeeee;
+}
+
+div.entryBox .header.closed {
+    border-radius: 8px;
+    border-bottom: none;
+}
+
+div.entryBox .header span {
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+div.entryBox .header b {
+    margin-left: 50px;
+}
+
+div.entryBox .body {
+    padding: 5px;
+}
+
+div.entryBox .body .description {
+    color: #666666;
+    font-style: italic;
+}
+
+div.entryBox .body .btn-primary {
+    float: right;
+    position: relative;
+    top: -10px;
+}
+
+div.entryBox .body form .btn-primary {
+    float: none;
+    top: 0px;
+}
+
+div.entryBox div.entryAction {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    text-align: center;
+}
+
+#page .wrapper {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -265px;
+}
+
+.wrapper:after {
+    content: "";
+    display: block;
+}
+
+footer, .wrapper:after {
+    height: 265px;
+}
+
+#page, content, body, html {
+    height: 100%;
+}
+
+footer {
+    height: 265px;
+
+}
+
+#footer {
+    background-color: #e1eaee;
+    width: 100%;
+}
+
+.homeFooter #footer {
+    padding-bottom: 2px;
+}
+
+.footer-content {
+    height: 475px;
+    background: url("../../theme1/images/footerArt.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.footer-content img {
+    width: auto;
+}
+
+.homeFooter .copyright {
+    color: #7F7E7A;
+}
+
+#footer .borderBottom {
+    border-bottom: 1px solid #CECDCC;
+}
+
+.homeFooter #footer .borderBottom {
+    border: none;
+}
+
+.copyright {
+    font-size: 12px;
+    padding: 10px 10px;
+    color: #7F7E7A;
+}
+
+#footer .menu {
+    font-size: 11px;
+    margin-top: 10px;
+    list-style-type: none;
+    float: left;
+}
+
+.redFlag {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.w80 {
+    min-width: 80%;
+    width: 80%;
+}
+
+.w90 {
+    min-width: 90%;
+    width: 90%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-right {
+    text-align: right;
+}
+
+.t-left {
+    text-align: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.f-left {
+    float: left;
+}
+
+.c-both {
+    width: 100%;
+    max-width: 100%;
+    clear: both;
+    color: #464543;
+    font-family: "Times New Roman";
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.table {
+    display: table;
+    /*display: flex;*/
+}
+
+.table-cell {
+    display: table-cell;
+    /*flex: 1;*/
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+/**
+    THEME SPECIFIC
+**/
+.large-Modal .modal-dialog {
+    width: 80%;
+}
+
+pre {
+    padding: 0;
+}
+
+/**
+    THEME ENDS HERE
+    CUSTOM CSS STARTS HERE
+**/
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+}
+
+.nav-tabs li a:focus {
+    outline: 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+}
+
+input[type="text"], input[type="number"] {
+    outline: 0px !important;
+    -webkit-appearance: none;
+}
+
+.middle45 {
+    font-size: 16px;
+    position: relative;
+    left: 45%;
+}
+
+.middle55 {
+    padding-left: 50%;
+}
+
+.input {
+    outline: 0px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.h16-7F7E7A {
+    font-size: 16px;
+    color: black;
+    font-weight: normal;
+    padding-bottom: 5px;
+}
+
+.h16Bold-7F7E7A {
+    font-family: MuseoSans-500;
+}
+
+.h21semiBold {
+    font-size: 26px;
+    font-family: OpenSans-SemiBold;
+    color: #464543;
+}
+
+.cartHeading {
+    padding-bottom: 20px;
+}
+
+.cartHeading .cartItemQty, .cartHeading .cartItemPrice {
+    padding-top: 7px;
+}
+
+.cartHeading .cartHeader {
+    width: 551px;
+    float: left;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: gold;
+}
+
+.noWrap {
+    white-space: nowrap;
+}
+
+ul.tiles, ul.listing {
+    margin: 0;
+    padding: 0;
+}
+
+.button {
+    background-color: #fab117;
+    background-image: -moz-linear-gradient(center top, #ffd21d, #fab117);
+    background-size: 100% auto;
+    border: 1px solid #fab117;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+    line-height: 2em;
+    min-width: 160px;
+    text-align: center;
+    text-shadow: 0 0 6px rgba(119, 76, 8, 0.65);
+    text-transform: uppercase;
+    width: auto;
+    font-size: 14px;
+}
+
+.button:hover {
+    color: #fff;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    font-size: 0;
+    visibility: hidden;
+}
+
+/* Hides from IE-mac \*/
+.clearfix {
+    display: block;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: " "
+}
+
+.homepage .sectionTitle {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 15px
+}
+
+#page-home {
+    /*background: url("../images/background.png") no-repeat top center;*/
+    background-color: #e1eaee;
+    padding-left: 10px;
+    background-size: 100% auto;
+    height: 100%;
+}
+
+.homepage {
+    padding-top: 10px;
+}
+
+#topBar-env {
+    height: 60px;
+    background-color: #464543;
+    width: 100%;
+    min-width: 1136px;
+}
+
+#topBar-env ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#topBar {
+    padding-top: 0px;
+}
+
+#topBar .searchCriteria {
+    height: 34px;
+    width: 420px;
+    border-radius: 15px;
+    float: left;
+    position: relative;
+    background-color: #E6E6E3;
+}
+
+#topBar .isOpenedMenu {
+    border-bottom-left-radius: 0;
+}
+
+#topBar .searchCriteria .loop {
+    width: 39px;
+    height: 34px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #FF6C00;
+    padding-left: 11px;
+    padding-top: 8px;
+    float: right;
+    cursor: pointer;
+}
+
+#topBar .searchCriteria .loop img {
+    width: 15px;
+}
+
+#topBar .searchCriteria .inputBox {
+    min-width: 202px;
+    width: auto;
+    display: inline-table;
+    float: left;
+    background-color: #E6E6E3;
+}
+
+#topBar .searchCriteria .inputBox input {
+    border: none;
+    width: 200px;
+    height: 34px;
+    padding-left: 10px;
+    background-color: #E6E6E3;
+    outline: 0px !important;
+    -webkit-appearance: none;
+}
+
+#topBar .logo {
+    width: 165px;
+    padding-left: 5px;
+    padding-top: 4px;
+    float: left;
+}
+
+#topBar .selectDept-env {
+    min-width: 60px;
+    padding-left: 14px;
+    padding-top: 8px;
+    height: 34px;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    padding-right: 5px;
+    float: left;
+}
+
+#topBar .isOpenedMenu .selectDept-env {
+    border-bottom-left-radius: 0;
+}
+
+#topBar .selectDept {
+    width: auto;
+    max-width: 160px;
+    height: 17px;
+}
+
+#topBar .openedMenu {
+    background-image: url("../images/icon-arrow-up.svg");
+}
+
+#topBar .image-icon {
+    max-height: 21px;
+}
+
+.searchBox input {
+    margin-top: 13px;
+    border-radius: 4px;
+    margin-left: 20px;
+    width: 70%;
+    color: black;
+}
+
+select {
+    height: 40px;
+    color: #7F7E7A;
+    font-size: 14px;
+    border: 1px solid #CECDCC;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+}
+
+.page-orderOverview .merchant-env {
+    padding-top: 10px;
+}
+
+.leftOrderSummary {
+    float: left;
+    width: 600px;
+}
+
+.page-orderOverview .cartSummary {
+    margin: 0;
+    height: auto;
+    width: 325px;
+    text-align: center;
+}
+
+.orderCreated {
+    padding-top: 80px;
+
+}
+
+.orderCreated .h21semiBold {
+    line-height: 30pt;
+}
+
+.borderRoundedBox {
+    border: 1px solid #CECDCC;
+    border-radius: 10px;
+}
+
+.page-myAccount .borderRoundedBox {
+    padding: 12px 18px 15px 18px;
+    margin-bottom: 35px;
+    background-color: white;
+}
+
+.borderRoundedBox.chooseAddress {
+    padding: 12px 0px 20px 20px;
+}
+
+.deleteButton-env {
+    position: absolute;
+    bottom: 0;
+    color: #ff6c00;
+}
+
+.deleteButton-env .deleteButton {
+    margin-right: 40px;
+}
+
+.addressBlock {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 255px;
+    height: 150px;
+    margin-top: 25px;
+    position: relative;
+}
+
+.addressBlock .selectAddress {
+    position: absolute;
+    bottom: 0;
+    color: #7F7E7A;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.addressBlock .selectAddress input {
+    margin-right: 5px;
+}
+
+.page-myAccount .addressBlock {
+    margin-top: 2px;
+}
+
+.orderHeader .orangeBorderLink {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.orderHeader .info-order {
+    float: left;
+    padding-right: 80px;
+    color: #7f7e7a;
+    font-size: 14px;
+    text-align: left;
+}
+
+.info-order .labelInfo {
+    color: #464543;
+}
+
+.orderDetails {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.orderDetails .pTitle {
+    margin-top: 5px;
+}
+
+.orderDetails .cartItem {
+    border-top: 1px solid #f6f5f0;
+}
+
+.orderDetails .cartItem:first-child {
+    border-top: none;
+}
+
+.orderCartInfo {
+    float: left;
+    font-size: 14px;
+    color: #464543;
+    width: 943px;
+}
+
+.account-env {
+    width: 620px;
+    margin: 0 auto;
+    margin-top: 70px;
+    padding: 40px 110px;
+}
+
+.login-env {
+    height: 340px;
+}
+
+.account-env .form-control {
+    height: 40px;
+}
+
+.account-env .orangeBorderLink {
+    width: 100%;
+}
+
+.account-env .footer {
+    margin-top: 30px;
+}
+
+.tr-firstName-wrapper, .tr-lastName-wrapper {
+    float: left;
+    height: 56px;
+    width: 191px;
+}
+
+.tr-firstName-wrapper {
+    margin-right: 10px;
+}
+
+.tr-email-wrapper {
+    clear: both;
+}
+
+.myAccountLinks a {
+    margin-right: 100px;
+}
+
+.notifications .orangeBorderLink {
+    height: 40px;
+    font-size: 14px;
+    margin-right: 30px;
+    width: 275px;
+}
+
+.notifications .anotherAddressLink {
+    width: 300px;
+}
+
+.notifications .deleteMerchantButton {
+    margin-right: 10px;
+}
+
+.notifications .alert-danger {
+    margin-bottom: 12px;
+}
+
+.notifications .alert-danger .line1 {
+    margin-bottom: 12px;
+}
+
+.notifications .alert-danger .line2 {
+    margin-bottom: 8px;
+}
+
+.notifications .alert-danger .h21semiBold {
+    margin-bottom: 5px;
+}
+
+.myAccount img {
+    cursor: pointer;
+    cursor: hand;
+}
+
+/* footer */
+.logo-footer {
+    float: left;
+    width: 150px;
+}
+
+.Logo {
+    width: 100%;
+}
+
+.Logo img {
+    width: 4%;
+    height: 4%;
+}
+
+.orangeBorderLink:hover {
+    color: #FF6C00;
+}
+
+.orangeLink {
+    color: #FF6C00;
+    font-size: 16px;
+    font-family: OpenSans-Bold;
+}
+
+.orangeLink span {
+    text-decoration: underline;
+}
+
+.orangeLink:hover {
+    color: #FF6C00;
+}
+
+
+/** Top menu
+ */
+header ,  .topbar, .topbar-wrapper , .navbars
+{
+    border : none;
+}
+.topbar .branding {
+    cursor: pointer;
+    float: left;
+    color: white;
+}
+
+.navbar-header
+{
+    border : none;
+}
+img.logo {
+    width: 64px;
+}
+.topbar-wrapper ,
+.topbar , .container-fluid{
+    background-color: #464543;
+    border: none;
+    nmargin:0;
+
+}
+.topbar{
+    height: 50px;
+    color: white;
+    border: none;
+}
+
+.dropdown-menu img ,.topnav img{
+    height: 21px;
+}
+.navbar-toggle
+{
+    border: none;
+}
+.navbar-default .navbar-nav > li > a{
+    color: white;
+}
+.navbar , .navbar-default {
+    border: none;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
+{
+    color: #5bc0de;
+}
+
+.searchBox input {
+    color: black;
+    height: 30px;
+    padding: 0px 10px;
+    background: url('../images/search.png') white no-repeat right center;
+}
+
+.loginPage{
+    height: 800px;
+}
+/*
+ja: animation onclik that makes it wider
+.searchBox input {
+    height: 30px;
+    width: 275px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    background: #eee;
+    color: #333;
+    transition: all .7s
+}
+
+.searchBox input:focus {
+    width: 600px;
+    background: white;
+    position: relative;
+    z-index: 20
+}
+*/
+
+.branding
+{
+    width: 70%;
+}
+
+
+/**
+page boxes
+ */
+.entryBoxes .box-wrapper {
+    border: 1px solid silver;
+    border-radius: 10px;
+    margin: 0px;
+    margin-bottom:12px;
+    padding:12px;
+}
+
+
+/**
+media specific declarations
+ */
+
+
+
+@media (max-width: 1920px) {
+
+    .footer-content {
+        height: 323px;
+    }
+}
+@media (max-width: 1280px) {
+
+    .footer-content {
+        height: 245px;
+    }
+}
+
+@media (max-width: 980px) {
+
+    .footer-content {
+        height: 220px;
+    }
+}
+
+@media (max-width: 799px) {
+
+    .footer-content  {
+        height: 182px ;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .topbar .branding{
+        float:left;}
+
+    .login {
+        margin : 7px;
+    }
+    .footer-content  {
+        height: 152px;
+
+    } .searchBox input {
+          width: 300px;
+      }
+      .branding{
+          width : auto;
+      }
+}
+
+@media (max-width: 599px) {
+
+    .footer-content {
+        height: 121px;
+    }
+    .searchBox input {
+        width: 350px;
+
+    }
+}
+@media (max-width: 479px) {
+    .searchBox input {
+        width: 250px;
+        margin-bottom:12px;
+    }
+    .footer-content {
+        height: 90px;
+    }
+    .branding{
+        width:70%;
+    }
+}
+
+
+
+
+
+
+
+@media (min-width: 1920px) {
+
+    .footer-content {
+        height: 485px;
+    }
+}
+
+/**
+Change the break point of the collapse button
+ */
+
+@media(max-width:1300px)  {
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-collapse {
+        overflow-x: visible !important;
+    }
+
+    .navbar-collapse.in {
+        overflow-y: auto !important;
+    }
+
+    .collapse.in {
+        display: block !important;
+    }
+
+    .navbar-toggle{
+        display: block;
+        float: right;
+    }
+    .navbar-header
+    {
+        float : right;
+    }
+
+
+    .navbar .menu
+    {
+        background: #464543 none repeat scroll 0 0;
+        border: medium none;
+        float: right;
+        position: absolute;
+        right: 15px;
+        text-align: right;
+        top: 52px;
+        width: 150px;
+        z-index: 12;
+    }
+}

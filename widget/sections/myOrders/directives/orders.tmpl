@@ -1,0 +1,30 @@
+<div id="page-home">
+	<div class="container-main-width homepage">
+		<div ng-controller="ordersCtrl" class="container-main-width" id="">
+			<p><h3 class="t-center" ng-show="countOrders > 0">Orders</h3></p>
+			<p  ng-show="countOrders === 0" style="text-align: center; font-size: 20px"><b>No previous orders to be shown!!</b></p>
+			<div class="entryBoxes entryBoxesGrid" ng-show="countOrders > 0">
+				<div ng-repeat="order in orders | filter: searchKeyword" class="col-lg-3 col-md-4 col-md-6 col-sm-6 col-sm-12" style="border: 1px solid silver; border-radius: 10px; margin-left: 0px; margin-bottom: 0px">
+					<div class="head" style="margin-left: 5px; color: #464543; font-family: 'Times New Roman';">
+						<h4><b>{{order.pet.name}} ({{order.pet.price}})</b></h4><button ng-show="order.pet.status === 'ready'" class="btn btn-success f-right" style="margin-top: -35px;padding: 3px 5px 3px 5px; font-size: 16px" disabled>Confirmed</button>
+						<button ng-show="order.pet.status === 'pending'" class="btn btn-danger f-right" style="margin-top: -35px;padding: 3px 5px 3px 5px; font-size: 16px" disabled>Pending</button>
+					</div>
+					<div>
+						<div class="c-both" style="height: 100px;">
+							<img ng-src="{{order.pet.photoUrls}}" alt="Pet Image" width="120px" height="110px" title="Pet Image" class="f-left" hspace="10px"/>
+							<div class="col-lg-offset-7">
+								<b>Breed</b>: {{order.pet.breed}}<br>
+								<b>Gender</b>: {{order.pet.gender}}<br>
+								<b>Color</b>: {{order.pet.color}}<br>
+								<b>Age</b>: {{order.pet.age}}<br>
+								<b>Quantity</b>: {{order.pet.quantity}}
+							</div>
+						</div>
+						<em style="padding-left: 5px; font-size: 14px">{{order.pet.description}}<br></em>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+</div>
