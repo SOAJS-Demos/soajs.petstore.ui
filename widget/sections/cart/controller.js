@@ -114,8 +114,8 @@ cartApp.controller('cartOrdersCtrl', ['$scope', '$cookieStore', '$timeout', '$lo
 											$scope.modalInstance.close();
 										}
 										
-										//if counter got to the limit exectue the call to listCart
-										if(i === order.length -1){
+										//if counter got to the limit execute the call to listCart
+										if(i === orders.length -1){
 											$scope.listCart();
 											$scope.$parent.$emit("loadUserInterface", {});
 										}
