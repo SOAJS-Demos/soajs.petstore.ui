@@ -82,46 +82,14 @@ cartApp.controller('cartOrdersCtrl', ['$scope', '$cookieStore', '$timeout', '$lo
 						'btn': 'primary',
 						'action': function (formData) {
 							overlayLoading.show();
-							var i = 0;
-							while (i <= orders.length - 1) {
-								for (i; i < orders.length; i++) {
-									var quantity = orders[i].pet.quantity;
-									var petId = orders[i].petId;
-									var id = orders[i]._id;
-									var opts = {
-										"method": "post",
-										"routeName": "/orders/cart/checkout/" + id,
-										"params": {
-											"petId": petId,
-											"quantity": quantity,
-											"userId": $localStorage.soajs_user._id
-										},
-										"data": {
-											"infos": {
-												"firstName": $localStorage.soajs_user.firstName,
-												"lastName": $localStorage.soajs_user.lastName,
-												"email": $localStorage.soajs_user.email,
-												'phone': formData.phone
-											}
-										}
-									};
-									getSendDataFromServer($scope, ngDataApi, opts, function (error) {
-										overlayLoading.hide();
-										if (error) {
-											$scope.$parent.displayFixedAlert('danger', error.message);
-										}
-										else {
-											$scope.modalInstance.close();
-										}
-										
-										//if counter got to the limit execute the call to listCart
-										if(i === orders.length -1){
-											$scope.listCart();
-											$scope.$parent.$emit("loadUserInterface", {});
-										}
-									});
-								}
-							}
+							
+							processOrders(0, formData, function(){
+								$scope.modalInstance.close();
+								$scope.listCart();
+								$scope.$parent.$emit("loadUserInterface", {});
+							});
+								
+							
 							$scope.form.formData = {};
 							$scope.$parent.displayFixedAlert('success', "Confirmed successfully");
 						}
@@ -138,6 +106,44 @@ cartApp.controller('cartOrdersCtrl', ['$scope', '$cookieStore', '$timeout', '$lo
 				]
 			};
 			buildFormWithModal($scope, $modal, options);
+		}
+		
+		function processOrders(i,formData,  mCb){
+			var quantity = orders[i].pet.quantity;
+			var petId = orders[i].petId;
+			var id = orders[i]._id;
+			var opts = {
+				"method": "post",
+				"routeName": "/orders/cart/checkout/" + id,
+				"params": {
+					"petId": petId,
+					"quantity": quantity,
+					"userId": $localStorage.soajs_user._id
+				},
+				"data": {
+					"infos": {
+						"firstName": $localStorage.soajs_user.firstName,
+						"lastName": $localStorage.soajs_user.lastName,
+						"email": $localStorage.soajs_user.email,
+						'phone': formData.phone
+					}
+				}
+			};
+			getSendDataFromServer($scope, ngDataApi, opts, function (error) {
+				i++;
+				overlayLoading.hide();
+				if (error) {
+					$scope.$parent.displayFixedAlert('danger', error.message);
+				}
+				else {
+					if(i === orders.length){
+						return mCb();
+					}
+					else{
+						processOrders(i, formData, mCb);
+					}
+				}
+			});
 		}
 	};
 }]);
