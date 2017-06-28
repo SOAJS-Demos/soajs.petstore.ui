@@ -47,17 +47,14 @@ petStoreApp.service('ngDataApi', ['$http', '$cookies', '$cookieStore', '$localSt
 					returnAPIResponse(scope, response, config, cb)
 				}).error(function (errData, status, headers, config) {
 					//logout the user
-					logoutUser(scope);
 					returnErrorOutput(config, status, headers, config, cb)
 				});
 			}).error(function (errData, status, headers, config) {
 				//logout the user
-				logoutUser(scope);
 				returnErrorOutput(config, status, headers, config, cb)
 			});
 		}).error(function (errData, status, headers, config) {
 			//logout the user
-			logoutUser(scope);
 			returnErrorOutput(config, status, headers, config, cb)
 		});
 	}
