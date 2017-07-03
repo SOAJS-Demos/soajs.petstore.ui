@@ -10,17 +10,41 @@ uracApp.controller('loginCtrl', [ '$scope', 'ngDataApi', '$cookies', 'isUserLogg
 		var count = {
 			clear: 0
 		};
-		$scope.$parent.$emit("cart", count);
-		$cookies.remove('access_token');
-		$cookies.remove('refresh_token');
-		$cookies.remove('soajsID');
-		$cookies.remove('soajs_auth');
-		$cookies.remove('soajs_current_route');
-		$cookies.remove('selectedInterval');
-		$localStorage.soajs_user = null;
-		$localStorage.acl_access = null;
-		$scope.$parent.go("/login");
-		$scope.$parent.rebuildMenu();
+		getSendDataFromServer($scope, ngDataApi, {
+			"method": "delete",
+			"routeName": "/oauth/refreshToken/" + $cookies.get("refresh_token"),
+			"headers":{
+				"key": apiConfiguration.key
+			}
+		}, function (error) {
+			if (error) {
+				$scope.$parent.displayFixedAlert('danger', error.message);
+			}
+			getSendDataFromServer($scope, ngDataApi, {
+				"method": "delete",
+				"routeName": "/oauth/accessToken/" + $cookies.get("access_token"),
+				"headers":{
+					"key": apiConfiguration.key
+				}
+			}, function (error) {
+				
+				overlayLoading.hide();
+				if (error) {
+					$scope.$parent.displayFixedAlert('danger', error.message);
+				}
+				$scope.$parent.$emit("cart", count);
+				$cookies.remove('access_token');
+				$cookies.remove('refresh_token');
+				$cookies.remove('soajsID');
+				$cookies.remove('soajs_auth');
+				$cookies.remove('soajs_current_route');
+				$cookies.remove('selectedInterval');
+				$localStorage.soajs_user = null;
+				$localStorage.acl_access = null;
+				$scope.$parent.go("/login");
+				$scope.$parent.rebuildMenu();
+			});
+		});
 	}
 	
 	var formConfig = formConf.loginConfig;
