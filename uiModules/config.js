@@ -1,77 +1,81 @@
 "use strict";
-
 /**
  * Custom configuration values
  */
-var titlePrefix = "SOAJS";
+
 var mydomain = "soajs.org";
-var mydomainport = location.port;
-if (mydomainport && mydomainport !== 80) {
-	mydomain += ":" + mydomainport;
+
+//detect domain
+if (location && location.host) {
+	var customDomain = location.host;
+	customDomain = customDomain.split(":")[0];
+	customDomain = customDomain.split(".");
+	customDomain.shift();
+	customDomain = customDomain.join(".");
+	mydomain = customDomain;
 }
+
 var protocol = window.location.protocol;
+
+//detect port
+var mydomainport = (protocol ==='https:') ? 443 : 80;
+if (location && location.port && parseInt(location.port) !== 80) {
+	mydomainport = location.port;
+}
+mydomain += ":" + mydomainport;
+
+//set the api domain
+var mydomainAPI = "portal-api";
+if (customSettings && customSettings.api && customSettings.api !== '') {
+	mydomainAPI = customSettings.api;
+}
+
+//set the key
+var myKey = "cc9390e7b7bb0a360c899aa904382def97c642aa25bcbe98b1b737c683b97f7dcd421b510d6cd6f1656bdb0c730baa0cceb7b810e420abd444595c4175961746fd6d771085fd302df4b1055201804c17b3e1cda146fa6a02d3d9dcffbb841081";
+if (customSettings && customSettings.key && customSettings.key !== '') {
+	myKey = customSettings.key;
+}
+
+var titlePrefix = "SOAJS";
 var themeToUse = "default";
-var whitelistedDomain = ['localhost', '127.0.0.1', 'dashboard-api.' + mydomain];
+var whitelistedDomain = ['localhost', '127.0.0.1', mydomainAPI + '.' + mydomain];
 var apiConfiguration = {
-	domain: protocol + '//dashboard-api.' + mydomain,
-	key: '9b96ba56ce934ded56c3f21ac9bdaddc8ba4782b7753cf07576bfabcace8632eba1749ff1187239ef1f56dd74377aa1e5d0a1113de2ed18368af4b808ad245bc7da986e101caddb7b75992b14d6a866db884ea8aee5ab02786886ecf9f25e974'
+	domain: window.location.protocol + '//' + mydomainAPI + '.' + mydomain,
+	key: myKey
 };
 
-var SOAJSRMS = ['soajs.controller','soajs.urac','soajs.oauth','soajs.dashboard','soajs.prx','soajs.gcs'];
-
+var SOAJSRMS = ['soajs.controller', 'soajs.urac', 'soajs.oauth', 'soajs.dashboard', 'soajs.prx', 'soajs.gcs'];
+var soajsAppModules = ['ui.bootstrap', 'ui.bootstrap.datetimepicker', 'ui.select', 'luegg.directives', 'angular-sortable-view', 'ngRoute', 'ngCookies', 'ngStorage', 'ngSanitize', 'textAngular', "ngFileUpload", "swaggerUi", "ui.ace", "ngCkeditor"];
 var uiModuleDev = 'modules/dev';
 var uiModuleStg = 'modules/stg';
 var uiModuleProd = 'modules/prod';
 var uiModuleQa = 'modules/qa';
+var uiModulePortal = 'modules/portal';
+var uiModuleDash = 'modules/dashboard';
 
 var modules = {
-	"develop": {
-		"dashboard": {
-			services: 'modules/dashboard/services/install.js',
-			contentBuilder: 'modules/dashboard/contentBuilder/install.js',
-			githubApp: 'modules/dashboard/gitAccounts/install.js',
-			swaggerEditorApp: 'modules/dashboard/swaggerEditor/install.js',
-			catalogs: 'modules/dashboard/catalogs/install.js',
-			ci: 'modules/dashboard/ci/install.js',
-			cd: 'modules/dashboard/cd/install.js'
-		}
-	},
-	"manage": {
-		"dashboard": {
-			productization: 'modules/dashboard/productization/install.js',
-			multitenancy: 'modules/dashboard/multitenancy/install.js',
-			members: 'modules/dashboard/members/install.js',
-			settings: 'modules/dashboard/settings/install.js'
-		}
-	},
-	"deploy": {
-		"dashboard": {
-			environments: 'modules/dashboard/environments/install.js'
-		}
-	},
 	"operate": {
+		"portal": {
+			urac: uiModulePortal + '/urac/install.js'
+		},
 		"dev": {
 			urac: uiModuleDev + '/urac/install.js',
-			contentManagement: uiModuleDev + '/contentManagement/install.js',
 			petStore: 'modules/dev/petStore/install.js',
 			order: 'modules/dev/order/install.js'
 		},
 		"qa": {
-			urac: uiModuleQa + '/urac/install.js',
-			contentManagement: uiModuleQa + '/contentManagement/install.js'
+			urac: uiModuleQa + '/urac/install.js'
 		},
 		"stg": {
-			urac: uiModuleStg + '/urac/install.js',
-			contentManagement: uiModuleStg + '/contentManagement/install.js'
+			urac: uiModuleStg + '/urac/install.js'
 		},
 		"prod": {
-			urac: uiModuleProd + '/urac/install.js',
-			contentManagement: uiModuleProd + '/contentManagement/install.js'
+			urac: uiModuleProd + '/urac/install.js'
 		}
 	},
 	"common": {
-		"dashboard": {
-			myAccount: 'modules/dashboard/myAccount/install.js'
+		"portal": {
+			myAccount: uiModulePortal + '/myAccount/install.js'
 		}
 	}
 };
